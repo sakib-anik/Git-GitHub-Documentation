@@ -1,0 +1,168 @@
+GitHub ==>
+1.Hosting Service For Repositories(Folders)
+2.GUI
+
+Git ==>
+1.Tools, Softwares
+2.Version Control System
+3.CLI
+
+git --version
+==> Check Installed Git Version in the System.
+
+git config
+
+git config --list
+==> shows user configuration
+
+setting/changing username globally:
+git config --global user.name "sakib" 
+setting/changing email globally:
+git config --global user.email "sakib.within@gmail.com"
+
+setting/changing username repository wise:
+git config user.name "sakib"
+setting/changing email repository wise:
+git config user.email "sakib.within@gmail.com"
+
+checking username:
+git config user.name
+
+checking email:
+git config user.email
+
+mkdir notes
+cd notes
+ls -a
+
+Initialize Git:
+git init ==> .git repository
+
+touch day1.txt
+
+git status
+==> displays the state of the working directory and staging area
+
+pwd ==> present working directory
+
+Git Staging:
+git add filename
+git add -A
+==> [A is shortened for all] stage all changed file in directory and subdirectories
+git add .
+==> stage all changed file in directory but not subdirectories
+git add .js
+==> directory wildcard
+git add **/*.js
+==> directory and subdirectory wildcard
+git diff
+==> checking the difference
+git restore filename
+commit:
+git commit -m "message"
+log:
+git log
+stage & commit:
+git add . && git commit -m "day3 data is added"
+git commit -am "commit_details"
+To undo the act of committing, leaving everything else intact:
+git reset --soft HEAD^
+To undo the act of committing, and also removing from the staging area:
+git reset HEAD^
+To completely undo it, throwing away all uncommitted changes, resetting everything to the previous commit:
+git reset --hard HEAD^
+To delete No of commits:
+git reset --soft HEAD~2
+To see log in one line:
+git log --oneline
+see commit history:
+git show
+git show HEAD
+git show commitId
+git show HEAD~[number]
+git checkout commitId/HEAD~[NUMBER]
+To go to recent commit:
+git checkout master
+GIT CLEAN:
+$ git clean -n
+Would remove untracked_file
+
+-f or --force
+
+$ git clean -f 
+Removing untracked_file
+
+git clean -f <path>
+
+-d include directories
+
+$ git clean -dn
+Would remove untracked_dir/
+$ git clean -df
+Removing untracked_dir/
+
+-x force removal of ignored files
+
+git clean -xf
+
+Interactive mode : -i
+$ git clean -di
+Would remove the following items:
+  untracked_dir/  untracked_file
+*** Commands ***
+    1: clean                2: filter by pattern    3: select by numbers    4: ask each             5: quit                 6: help
+What now>
+
+.gitignore ==> list of things will not be staged
+test.txt
+.env
+*.txt
+!main.txt
+test?.txt ==> ? == one character
+temp/ ==> files containing the temp folder
+
+git revert HEAD
+
+How to check if there is a existing connetion between Local and remote repository:
+git remote
+
+To see connection details:
+git remote -v
+
+Connecting Local and remote repository:
+git remote add origin link.git
+origin refers url(link.git)
+
+How to clone a project from github(remote repo) to local repo:
+git clone link.git
+
+For pushing something to git:
+git push
+
+Using security oken:
+git push -u origin main
+
+For pulling from github:
+git pull
+
+Branching ==> Copying
+Creating Branch:
+git branch branch_name
+For switching branch:
+git checkout branch_name
+git checkout master
+git merge branch_name
+
+Checking Local Branches:
+git branch
+
+For deleting branch:
+git branch -d branch_name
+
+For creating and switching to that branch:
+git checkout -b "branch_name"
+
+git push -u origin branch_name
+
+Issues:
+#issue_id
